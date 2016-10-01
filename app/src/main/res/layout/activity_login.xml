@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="pl.oskarpolak.mybook.LoginActivity">
+
+    <TextView
+        android:text="MyBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginTop="38dp"
+        android:id="@+id/logoView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Login"
+        android:ems="10"
+        android:layout_below="@+id/logoView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:id="@+id/loginEdit" />
+
+    <CheckBox
+        android:text="Zapamiętaj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordEdit"
+        android:layout_alignStart="@+id/passwordEdit"
+        android:id="@+id/rememberPassword"
+        android:layout_above="@+id/registerButton" />
+
+    <Button
+        android:text="Zaloguj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordEdit"
+        android:layout_marginStart="44dp"
+        android:id="@+id/loginButton"
+        android:layout_alignEnd="@+id/passwordEdit" />
+
+    <Button
+        android:text="Zarejestruj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_marginTop="22dp"
+        android:id="@+id/registerButton"
+        android:layout_alignEnd="@+id/loginButton"
+        android:layout_alignStart="@+id/rememberPassword" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordEdit"
+        android:layout_below="@+id/loginEdit"
+        android:layout_alignStart="@+id/loginEdit" />
+</RelativeLayout>
