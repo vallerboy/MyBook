@@ -1,6 +1,7 @@
 package pl.oskarpolak.mybook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -74,5 +75,11 @@ public class LoginActivity extends AppCompatActivity {
                  checkRememberPassword();
              }
         }
+
+    @OnClick(R.id.registerButton)
+    public void onClickRegister(){
+        startActivity(new Intent(this, RegisterActivity.class));
+        finish();
+    }
 
 }
