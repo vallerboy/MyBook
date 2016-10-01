@@ -10,17 +10,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class Database extends SQLiteOpenHelper {
     public Database(Context context) {
-        super(context, "MyBook.db", null, 1);
+        super(context, "MyBook.db", null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
           db.execSQL("create table user(id integer primary key autoincrement, login text, password text, telephone text, rentedBooks text);");
-          db.execSQL("create table book(id integer primary key autoincrement, picture text, name text, author text, descryption text, pages integer, isRented boolean);");
+          db.execSQL("create table book(id integer primary key autoincrement, picture text, name text, author text, descryption text, pages integer, isRented text);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        //db.execSQL("create table book(id integer primary key autoincrement, picture text, name text, author text, descryption text, pages integer, isRented text);");
     }
 }

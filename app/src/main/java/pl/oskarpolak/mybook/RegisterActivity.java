@@ -2,6 +2,7 @@ package pl.oskarpolak.mybook;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,7 +50,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                //startActivity(); Uruchamianie głównego activity
+                Intent i = new Intent(RegisterActivity.this, MainActivity.class);
+                i.putExtra("nick", registerLogin.getText().toString());
+                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
             }
         });
         AlertDialog alertDialog = builder.create();
@@ -65,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
                 createSusscesDialog();
             }
          }
-        Log.e("Rejestracja", "Kliknięto przycisk");
+        //Log.e("Rejestracja", "Kliknięto przycisk");
     }
 
 

@@ -43,41 +43,46 @@ public class LoginActivity extends AppCompatActivity {
         userData = new UserData(this);
     }
 
-    private boolean areLoginFieldsEmpty(){
+    private boolean areLoginFieldsEmpty() {
         return loginEdit.getText().toString().isEmpty() || passwordEdit.getText().toString().isEmpty();
     }
 
-    private void checkRememberPassword(){
+    private void checkRememberPassword() {
         SharedPreferences.Editor editor = preferences.edit();
 
-        if(rememberPassword.isChecked()){
+        if (rememberPassword.isChecked()) {
             editor.putString("login", loginEdit.getText().toString());
             editor.putString("password", passwordEdit.getText().toString());
             editor.putBoolean("isChecked", true);
             editor.commit();
-        }else{
+        } else {
             editor.clear();
             editor.commit();
         }
     }
 
     @OnClick(R.id.loginButton)
-    public void onClickLogin(){
-             if(areLoginFieldsEmpty()){
-                 Utils.showMessageWithoutAction(this, "Wypełnij wszystkie pola", "Logowanie");
-             }else{
-                 if(userData.checkLoginAndPassword(loginEdit.getText().toString(), passwordEdit.getText().toString())){
-                     //zalogowano
+    public void onClickLogin() {
+        if (areLoginFieldsEmpty()) {
+            Utils.showMessageWithoutAction(this, "Wypełnij wszystkie pola", "Logowanie");
+        } else {
+            if (userData.checkLoginAndPassword(loginEdit.getText().toString(), passwordEdit.getText().toString())) {
 
-                 }else{
-                     Utils.showMessageWithoutAction(this, "Niepoprawne dane", "Logownaie");
-                 }
-                 checkRememberPassword();
-             }
+                Intent i = new Intent(this, MainActivity.class);
+                i.putExtra("nick", loginEdit.getText().toString());
+
+                startActivity(i);
+                finish();
+
+            } else {
+                Utils.showMessageWithoutAction(this, "Niepoprawne dane", "Logownaie");
+            }
+            checkRememberPassword();
         }
+    }
 
     @OnClick(R.id.registerButton)
-    public void onClickRegister(){
+    public void onClickRegister() {
         startActivity(new Intent(this, RegisterActivity.class));
         finish();
     }

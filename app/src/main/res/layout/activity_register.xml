@@ -11,60 +11,60 @@
     tools:context="pl.oskarpolak.mybook.RegisterActivity">
 
     <EditText
+        android:id="@+id/registerLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:hint="Login"
-        android:layout_marginTop="27dp"
-        android:id="@+id/registerLogin"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:hint="@string/login"
+        android:inputType="textPersonName"
         android:paddingBottom="20dp" />
 
     <Button
-        android:text="Zarejestruj!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonRegister"
-        android:layout_below="@+id/registerPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/registerPhone"
         android:layout_alignStart="@+id/registerPhone"
-        android:layout_alignEnd="@+id/registerPhone" />
+        android:layout_below="@+id/registerPhone"
+        android:text="@string/zarejestruj" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:hint="Hasło"
         android:id="@+id/registerPassword"
-        android:layout_below="@+id/registerLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignStart="@+id/registerLogin"
-        android:layout_alignParentEnd="true"
-        android:paddingBottom="20dp"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerLogin"
+        android:ems="10"
+        android:hint="@string/has_o"
         android:inputType="textPassword"
-        android:ems="10"
-        android:hint="Powtórz hasło"
-        android:id="@+id/registerPasswordAgain"
-        android:layout_below="@+id/registerPassword"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:paddingBottom="20dp"/>
+        android:paddingBottom="20dp" />
 
     <EditText
+        android:id="@+id/registerPasswordAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:hint="Numer telefonu"
-        android:id="@+id/registerPhone"
-        android:layout_below="@+id/registerPasswordAgain"
-        android:layout_alignStart="@+id/registerPasswordAgain"
         android:layout_alignParentEnd="true"
-        android:paddingBottom="20dp"/>
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/registerPassword"
+        android:ems="10"
+        android:hint="@string/powt_rz_has_o"
+        android:inputType="textPassword"
+        android:paddingBottom="20dp" />
+
+    <EditText
+        android:id="@+id/registerPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/registerPasswordAgain"
+        android:layout_below="@+id/registerPasswordAgain"
+        android:ems="10"
+        android:hint="@string/numer_telefonu"
+        android:inputType="phone"
+        android:paddingBottom="20dp" />
 </RelativeLayout>
